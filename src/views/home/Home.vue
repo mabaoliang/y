@@ -13,7 +13,7 @@
                              <i class="el-icon-location"></i>
                              <span>标签二</span>
                          </el-menu-item>
-                         <el-submenu  index="/home">
+                         <el-submenu  index="/data">
                              <template slot="title">
                                  <i class="el-icon-location"></i>
                                  <span>标签三</span>
@@ -40,6 +40,9 @@
         },
         methods:{
 
+        },
+        beforeUpdate (){
+            document.querySelector('body').setAttribute('style', 'margin:0;padding:0')
         },
         mounted(){  //跳到登录界面
             // var that=this
@@ -84,5 +87,6 @@
      /*height: 980px;*/
      padding: 0px;
      margin: 0px;
+     border: 0;
  }
 </style>
