@@ -1,21 +1,16 @@
 <template>
     <div id="login">
-        <el-container  class="c">
-            <el-header  align="center">登录界面</el-header>
-            <el-main>
-                <el-form :model="form" label-width="100px">
-                    <el-form-item label="帐号">
-                        <el-input v-model="form.userName"></el-input>
-                    </el-form-item>
-                    <el-form-item label="密码">
-                        <el-input v-model="form.userPassword"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button type="priary" @click="loginWay">登录</el-button>
-                    </el-form-item>
-                </el-form>
-            </el-main>
-        </el-container>
+        <el-form :model="form" label-width="100px">
+            <el-form-item label="帐号">
+                <el-input v-model="form.userName"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+                <el-input v-model="form.userPassword"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button  type="priary" @click="loginWay" >登录</el-button>
+            </el-form-item>
+        </el-form>
     </div>
 </template>
 
@@ -69,10 +64,16 @@
      margin: 0px;
 
  }
-    .c{
-        position: relative;
-        width: 30%;
-        left: 30%;
-        top: 30%;
-    }
+ .el-form
+ {
+     position: fixed;
+     width: 300px;
+     top: 40%;
+     left: 40%;
+ }
+ .el-button
+ {
+     width:50%;
+     margin: 0px 25%;
+ }
 </style>

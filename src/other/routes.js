@@ -6,6 +6,7 @@ import Login from "@/views/login/Login";
 import VA  from "@/views/Vpagea/VpageA";
 import VB from "@/views/Vpageb/VpageB";
 import VC from "@/views/Vpagec/VpageC";
+import VD from "@/views/Vpaged/VpageD";
 
 
 
@@ -16,9 +17,10 @@ const router = new VueRouter({
     routes: [
         {path:'/',component: Login},
         {path:'/home',component:Home,children:[
-                {path:'/va',component:VA},
+                {path:'/va',component: VA},
                 {path:'/vb',component: VB},
-                {path: '/vc',component:VC}
+                {path:'/vc',component: VC},
+                {path:'/vd',component: VD}
             ]
         }
     ]

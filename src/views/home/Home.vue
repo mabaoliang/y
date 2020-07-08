@@ -4,10 +4,24 @@
             <el-header  >欢迎你登录XX系统</el-header>
             <el-container>
                 <el-aside width="200px">
-                    <el-menu  :default-active="this.$route.path" router>
-                        <el-menu-item index="/va">标签-</el-menu-item>
-                         <el-menu-item index="/vb">标签二</el-menu-item>
-                        <el-menu-item index="/vc">标签三</el-menu-item>
+                    <el-menu  :default-active="$route.path" router >
+                        <el-menu-item index="/va">
+                            <i class="el-icon-location"></i>
+                            <span>标签-</span>
+                        </el-menu-item>
+                         <el-menu-item index="/vb">
+                             <i class="el-icon-location"></i>
+                             <span>标签二</span>
+                         </el-menu-item>
+                         <el-submenu  index="/home">
+                             <template slot="title">
+                                 <i class="el-icon-location"></i>
+                                 <span>标签三</span>
+                             </template>
+                             <el-menu-item index="/vc">标签三-1</el-menu-item>
+                             <el-menu-item index="/vd">标签三-2</el-menu-item>
+                         </el-submenu>
+
                     </el-menu>
                 </el-aside>
                 <el-main > <router-view></router-view></el-main>
@@ -20,7 +34,7 @@
     export default {
         name: "Home",
         data(){
-            return{
+            return {
 
             }
         },

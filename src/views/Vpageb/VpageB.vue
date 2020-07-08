@@ -1,7 +1,7 @@
 <template>
     <el-container>
-        <el-form ref="form" :model="form" label-width="80px">
-            <el-form-item label="活动名称">
+        <el-form ref="form" :rules="r" :model="form" label-width="80px">
+            <el-form-item label="活动名称" prop="name">
                 <el-input v-model="form.name"></el-input>
             </el-form-item>
             <el-form-item label="活动区域">
@@ -62,6 +62,9 @@
                     type: [],
                     resource: '',
                     desc: ''
+                },
+                r:{
+                    name:[{required:true,message:'请输入姓名',trigger:'blur'}]
                 }
             }
         },
