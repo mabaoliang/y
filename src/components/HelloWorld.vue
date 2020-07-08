@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    fdasdf
+    <div @click="this.$router.push('/home')">jump</div>
+    <router-link to="/home">Home</router-link>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -27,12 +30,18 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+
   </div>
 </template>
 
 <script>
+  import Home from '@/views/home/Home'
 export default {
   name: 'HelloWorld',
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    Home
+  },
   props: {
     msg: String
   }

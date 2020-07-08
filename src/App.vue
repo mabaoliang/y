@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import Home from './views/home/Home.vue'
+import Login from "@/views/login/Login";
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  // eslint-disable-next-line vue/no-unused-components
+  components: { HelloWorld , Home,Login}
 }
 </script>
 
@@ -23,6 +22,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
