@@ -2,67 +2,73 @@
     <div>
         <el-table
                 :data="tableData"
+                align="center"
                 style="width: 100%">
             <el-table-column
-                    prop="date"
-                    label="日期"
+
+                    label="图片"
+                    >
+                <template slot-scope="scope">
+                    <el-image :src="scope.row.goods_Image" style="width:80px"></el-image>
+                </template>
+            </el-table-column>
+            <el-table-column
+                    prop="goods_catename"
+                    label="类型"
                     width="180">
             </el-table-column>
             <el-table-column
-                    prop="name"
-                    label="姓名"
+                    prop="goods_title"
+                    label="标题"
                     width="180">
             </el-table-column>
             <el-table-column
-                    prop="age"
-                    label="年龄"
-                    width="180">
-            </el-table-column>
-            <el-table-column
-                    prop="sex"
-                    label="性别"
+                    prop="goods_desc"
+                    label="简介"
                     width="180"
                  >
             </el-table-column>
             <el-table-column
-                    prop="address"
-                    label="地址">
+                    prop="goods_original"
+                    label="价格">
+            </el-table-column>
+            <el-table-column
+                    prop="library"
+                    label="库存">
+            </el-table-column>
+            <el-table-column
+                    prop="goods_sales"
+                    label="销售">
+            </el-table-column>
+            <el-table-column
+                    prop="create_at"
+                    label="日期">
             </el-table-column>
         </el-table>
     </div>
 </template>
 
 <script>
+    import {loadList} from "@/http/api";
+
     export default {
         name: "VpageA",
         data(){
             return{
-                tableData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    age:21,
-                    sex:'男',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    age:21,
-                    sex:'男',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    age:21,
-                    sex:'男',
-                    address: '上海市普陀区金沙江路 1519 弄'
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    age:21,
-                    sex:'男',
-                    address: '上海市普陀区金沙江路 1516 弄'
-                }]
+                tableData: []
             }
+        },
+        created(){
+
+            loadList('/api/Index/timelimit',{cate_id: -1,
+                openid: "oIZLk5Cb6A8mGItjIA1f_qYDmyEg",
+                page: 10,
+                team_id: 10012}).then(res=>{
+                     console.log(res)
+                this.tableData=res.goods
+            }).catch(err=>{
+                console.log(err)
+            })
         }
     }
 </script>

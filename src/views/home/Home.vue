@@ -1,7 +1,13 @@
 <template>
     <div id="home">
         <el-container>
-            <el-header  >欢迎你登录XX系统</el-header>
+            <el-header  >
+                欢迎你登录XX系统
+               <el-button style="float:right;margin:0px">
+                   <i class="el-icon-switch-button"></i>
+                   <span>注销</span>
+               </el-button>
+            </el-header>
             <el-container>
                 <el-aside width="200px">
                     <el-menu  :default-active="$route.path" router >
@@ -41,9 +47,6 @@
         methods:{
 
         },
-        beforeUpdate (){
-            document.querySelector('body').setAttribute('style', 'margin:0;padding:0')
-        },
         mounted(){  //跳到登录界面
             // var that=this
            // setTimeout(function () {
@@ -64,7 +67,7 @@
      text-align: center;
      background-color: blanchedalmond;
  }
-.el-aside ,.el-menu
+.el-aside
 {
     width: 200px;
     min-height:980px;
